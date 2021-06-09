@@ -3,10 +3,7 @@ import HornedBeasts from './HornedBeasts';
 import data from './data.json';
 
 export class Main extends Component {
-    constructor(props) {
-        super(props);
 
-    }
 
     render() {
         return (
