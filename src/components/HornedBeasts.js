@@ -19,6 +19,10 @@ export class HornedBeasts extends Component {
         })
     }
 
+    modalOn = ()=>{
+       this.props.modalOn(this.props.title)
+    }
+
     render() {
         return (
             // <div >
@@ -30,8 +34,8 @@ export class HornedBeasts extends Component {
             //       {this.state.numOfVotes}
             //     </span>
             // </div>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={this.props.imageUrl} alt={this.props.title} title={this.props.title} />
+            <Card style={{ width: '18rem', margin: '8px' ,     display: 'inline-block' }}>
+                <Card.Img variant="top" src={this.props.imageUrl} alt={this.props.title} title={this.props.title}  style={{ width: '250px', height: '270px' }}  onClick={this.modalOn} />
                 <Card.Body>
                     <Card.Title> {this.props.title} </Card.Title>
                     <Card.Text> {this.props.description} </Card.Text>
