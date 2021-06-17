@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import HornedBeasts from './HornedBeasts';
 import dataHorns from './data.json';
-// import 'bootstrap/dist/css/bootstrap.css';
 import Form from 'react-bootstrap/Form';
-// import Button from 'react-bootstrap/Button';
 
 export class Main extends Component {
     constructor(props) {
