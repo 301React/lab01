@@ -10,6 +10,7 @@ import SelectedBeast from './components/SelectedBeast';
    constructor(props){
     super(props);
      this.state={
+      dataHorn:data,
       visibility:false,
       modalBeast :{}
      }
@@ -22,7 +23,7 @@ import SelectedBeast from './components/SelectedBeast';
    } 
 
    chosenBeast = (title)=>{
-      let selected = data.find(beast =>{
+      let selected = this.state.dataHorn.find(beast =>{
         if(beast.title == title){
           return beast;
         }
@@ -34,15 +35,22 @@ import SelectedBeast from './components/SelectedBeast';
       })
    }
 
+   filtered = (filteredHorns) =>{
+    this.setState ({
+      dataHorn: filteredHorns
+    })
+   }
+
   render() {
     return (
       <div className="App">
         <Header />
 
         <Main
-         data={data}
+         data={this.state.dataHorn}
          chosenBeast={this.chosenBeast}
-        />
+         filtered = {this.filtered}
+       />
        
         <SelectedBeast
           modalBeast={this.state.modalBeast}
